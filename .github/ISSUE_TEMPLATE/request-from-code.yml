@@ -1,0 +1,67 @@
+name: Bring something from the product's code
+description: Ask the design engineer to reproduce something that already exists in the product (a component, a colour, an icon) in the Loopwise Design System, or to bring the library back in step with the product.
+title: "[From code] "
+labels: ["request-from-code"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form **only** when the product's code is needed, which designers do not have:
+        - something exists in the product today, has to look exactly the same, and the library does not have it, or
+        - the product changed and the library no longer matches it.
+
+        If you are designing something **new or different**, do not file this: add it to the library yourself in a library session (designer guide, Part G).
+        One request per issue. Screenshots must use placeholder data, never real customer names or numbers.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is missing from the library?
+      options:
+        - A component, or a state or variant of one, that exists in the product
+        - A colour, text style, spacing or other token that exists in the product
+        - An icon that exists in the product
+        - The library is out of step with the product (the code changed)
+        - Something else that needs the code
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: What people call it.
+      placeholder: "For example: Cycle picker, Integration badge"
+    validations:
+      required: true
+  - type: textarea
+    id: seen
+    attributes:
+      label: Where is it in the product?
+      description: The page and how to get there (for example Projects, then Q4 Launch, then Timeline), plus a screenshot. For "out of step", add a screenshot of the live page next to the Figma component.
+    validations:
+      required: true
+  - type: textarea
+    id: states
+    attributes:
+      label: States and sizes needed
+      description: Default, hover, pressed, focus, disabled, loading, empty, error, sizes, Light and Dark, with or without an icon, long text, and so on.
+  - type: input
+    id: usage
+    attributes:
+      label: Where will you use it?
+      description: The screen or feature and its ticket.
+      placeholder: "For example: Project timeline, LOOP-1060"
+  - type: input
+    id: needed
+    attributes:
+      label: Needed by
+      placeholder: "A date, or the day the screen goes to review"
+  - type: textarea
+    id: meanwhile
+    attributes:
+      label: What did you use meanwhile?
+      description: The closest library component and the Question annotation you left on the frame. Do not draw a stand-in.
+  - type: textarea
+    id: code
+    attributes:
+      label: Code reference (optional)
+      description: A file, component name or CSS class if you know it, or the link of a pull request.
