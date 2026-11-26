@@ -1,0 +1,223 @@
+/* Loopwise Design System v0.1.0, read from Figma file mePj303lAcqSyWVjZodZWp.
+   Only the tokens these components and the page need; names match Figma's WEB code syntax. */
+
+/* 1. Primitives: raw values. Components never use these. */
+:root {
+  --lw-violet-50: #f1f0ff;
+  --lw-violet-100: #e4e1ff;
+  --lw-violet-200: #cbc5ff;
+  --lw-violet-300: #aba0ff;
+  --lw-violet-400: #8d7bfc;
+  --lw-violet-500: #7259f6;
+  --lw-violet-600: #5e41e8;
+  --lw-violet-700: #4e33c9;
+  --lw-violet-800: #3f2aa2;
+  --lw-violet-900: #2e2178;
+  --lw-violet-950: #1c1450;
+  --lw-slate-0: #ffffff;
+  --lw-slate-25: #fafbfd;
+  --lw-slate-50: #f4f5f9;
+  --lw-slate-100: #eaecf2;
+  --lw-slate-200: #dadee7;
+  --lw-slate-300: #bcc2d0;
+  --lw-slate-400: #8f97aa;
+  --lw-slate-500: #646c80;
+  --lw-slate-600: #525a6c;
+  --lw-slate-700: #3c4252;
+  --lw-slate-800: #262a36;
+  --lw-slate-850: #1d2029;
+  --lw-slate-900: #151821;
+  --lw-slate-950: #0d0f15;
+  --lw-lime-50: #f8fee8;
+  --lw-lime-100: #f2fcd6;
+  --lw-lime-200: #e6f9ad;
+  --lw-lime-300: #d9f57a;
+  --lw-lime-400: #c6ee45;
+  --lw-lime-500: #b5e61d;
+  --lw-lime-600: #8fb812;
+  --lw-lime-700: #6e8f0a;
+  --lw-lime-800: #54700a;
+  --lw-lime-900: #2f3d08;
+  --lw-green-50: #ecfbf1;
+  --lw-green-100: #d3f5e0;
+  --lw-green-300: #6fd69a;
+  --lw-green-500: #1fa35a;
+  --lw-green-600: #14874a;
+  --lw-green-700: #0f6b3b;
+  --lw-green-900: #0a3d23;
+  --lw-amber-50: #fff8eb;
+  --lw-amber-100: #feedcb;
+  --lw-amber-300: #fbc56a;
+  --lw-amber-500: #f59e0b;
+  --lw-amber-600: #cc7a05;
+  --lw-amber-700: #9a5205;
+  --lw-amber-900: #5c3307;
+  --lw-red-50: #fef1f1;
+  --lw-red-100: #fddcdd;
+  --lw-red-300: #f59a9e;
+  --lw-red-500: #e5484d;
+  --lw-red-600: #ce2c35;
+  --lw-red-700: #a8222a;
+  --lw-red-900: #5e1418;
+  --lw-blue-50: #eef6fe;
+  --lw-blue-100: #d7e9fc;
+  --lw-blue-300: #8ec2f5;
+  --lw-blue-500: #2d8ceb;
+  --lw-blue-600: #1b74c5;
+  --lw-blue-700: #155c9e;
+  --lw-blue-900: #0d3560;
+  --lw-alpha-ink-6: #1518210f;
+  --lw-alpha-ink-10: #1518211a;
+  --lw-alpha-ink-40: #15182166;
+  --lw-alpha-black-40: #00000066;
+  --lw-alpha-black-56: #0000008f;
+  --lw-alpha-black-64: #000000a3;
+  --lw-alpha-violet-32: #7259f652;
+
+  --lw-space-2: 2px;
+  --lw-space-4: 4px;
+  --lw-space-6: 6px;
+  --lw-space-8: 8px;
+  --lw-space-10: 10px;
+  --lw-space-12: 12px;
+  --lw-space-16: 16px;
+  --lw-space-20: 20px;
+  --lw-space-24: 24px;
+  --lw-space-32: 32px;
+  --lw-space-40: 40px;
+  --lw-space-48: 48px;
+  --lw-space-64: 64px;
+  --lw-radius-none: 0px;
+  --lw-radius-xs: 4px;
+  --lw-radius-sm: 6px;
+  --lw-radius-md: 8px;
+  --lw-radius-lg: 12px;
+  --lw-radius-xl: 16px;
+  --lw-radius-full: 999px;
+  --lw-size-icon-sm: 16px;
+  --lw-size-icon-md: 20px;
+  --lw-size-control-sm: 28px;
+  --lw-size-control-md: 36px;
+  --lw-size-control-lg: 40px;
+}
+
+/* 2. Semantic colours: what a colour is for. Light, then Dark. */
+:root {
+  --lw-color-bg-canvas: var(--lw-slate-25);
+  --lw-color-bg-surface: var(--lw-slate-0);
+  --lw-color-bg-surface-raised: var(--lw-slate-0);
+  --lw-color-bg-subtle: var(--lw-slate-50);
+  --lw-color-bg-muted: var(--lw-slate-100);
+  --lw-color-bg-hover: var(--lw-slate-50);
+  --lw-color-bg-pressed: var(--lw-slate-100);
+  --lw-color-bg-selected: var(--lw-violet-50);
+  --lw-color-bg-disabled: var(--lw-slate-100);
+  --lw-color-bg-inverse: var(--lw-slate-900);
+  --lw-color-bg-brand: var(--lw-violet-600);
+  --lw-color-bg-brand-hover: var(--lw-violet-700);
+  --lw-color-bg-brand-pressed: var(--lw-violet-800);
+  --lw-color-bg-brand-subtle: var(--lw-violet-50);
+  --lw-color-bg-accent: var(--lw-lime-300);
+  --lw-color-bg-accent-subtle: var(--lw-lime-100);
+  --lw-color-bg-success: var(--lw-green-50);
+  --lw-color-bg-warning: var(--lw-amber-50);
+  --lw-color-bg-danger: var(--lw-red-50);
+  --lw-color-bg-info: var(--lw-blue-50);
+  --lw-color-bg-danger-solid: var(--lw-red-600);
+  --lw-color-bg-danger-solid-hover: var(--lw-red-700);
+  --lw-color-bg-danger-solid-pressed: var(--lw-red-900);
+  --lw-color-bg-scrim: var(--lw-alpha-ink-40);
+  --lw-color-text-primary: var(--lw-slate-900);
+  --lw-color-text-secondary: var(--lw-slate-600);
+  --lw-color-text-tertiary: var(--lw-slate-500);
+  --lw-color-text-disabled: var(--lw-slate-400);
+  --lw-color-text-inverse: var(--lw-slate-0);
+  --lw-color-text-on-brand: var(--lw-slate-0);
+  --lw-color-text-on-accent: var(--lw-slate-900);
+  --lw-color-text-brand: var(--lw-violet-600);
+  --lw-color-text-danger: var(--lw-red-700);
+  --lw-color-icon-primary: var(--lw-slate-700);
+  --lw-color-icon-secondary: var(--lw-slate-500);
+  --lw-color-icon-danger: var(--lw-red-600);
+  --lw-color-border-default: var(--lw-slate-200);
+  --lw-color-border-subtle: var(--lw-slate-100);
+  --lw-color-border-strong: var(--lw-slate-300);
+  --lw-color-border-focus: var(--lw-violet-500);
+  --lw-color-border-danger: var(--lw-red-500);
+  --lw-color-border-brand: var(--lw-violet-600);
+  --lw-color-effect-shadow-soft: var(--lw-alpha-ink-6);
+  --lw-color-effect-shadow-strong: var(--lw-alpha-ink-10);
+  --lw-color-effect-focus-ring: var(--lw-alpha-violet-32);
+  --lw-color-border-hover: var(--lw-slate-400);
+}
+
+.dark {
+  --lw-color-bg-canvas: var(--lw-slate-950);
+  --lw-color-bg-surface: var(--lw-slate-900);
+  --lw-color-bg-surface-raised: var(--lw-slate-850);
+  --lw-color-bg-subtle: var(--lw-slate-850);
+  --lw-color-bg-muted: var(--lw-slate-800);
+  --lw-color-bg-hover: var(--lw-slate-800);
+  --lw-color-bg-pressed: var(--lw-slate-700);
+  --lw-color-bg-selected: var(--lw-violet-950);
+  --lw-color-bg-disabled: var(--lw-slate-800);
+  --lw-color-bg-inverse: var(--lw-slate-50);
+  --lw-color-bg-brand: var(--lw-violet-600);
+  --lw-color-bg-brand-hover: var(--lw-violet-500);
+  --lw-color-bg-brand-pressed: var(--lw-violet-700);
+  --lw-color-bg-brand-subtle: var(--lw-violet-950);
+  --lw-color-bg-accent: var(--lw-lime-400);
+  --lw-color-bg-accent-subtle: var(--lw-lime-900);
+  --lw-color-bg-success: var(--lw-green-900);
+  --lw-color-bg-warning: var(--lw-amber-900);
+  --lw-color-bg-danger: var(--lw-red-900);
+  --lw-color-bg-info: var(--lw-blue-900);
+  --lw-color-bg-danger-solid: var(--lw-red-600);
+  --lw-color-bg-danger-solid-hover: var(--lw-red-700);
+  --lw-color-bg-danger-solid-pressed: var(--lw-red-900);
+  --lw-color-bg-scrim: var(--lw-alpha-black-64);
+  --lw-color-text-primary: var(--lw-slate-50);
+  --lw-color-text-secondary: var(--lw-slate-300);
+  --lw-color-text-tertiary: var(--lw-slate-400);
+  --lw-color-text-disabled: var(--lw-slate-600);
+  --lw-color-text-inverse: var(--lw-slate-900);
+  --lw-color-text-on-brand: var(--lw-slate-0);
+  --lw-color-text-on-accent: var(--lw-slate-900);
+  --lw-color-text-brand: var(--lw-violet-300);
+  --lw-color-text-danger: var(--lw-red-300);
+  --lw-color-icon-primary: var(--lw-slate-200);
+  --lw-color-icon-secondary: var(--lw-slate-400);
+  --lw-color-icon-danger: var(--lw-red-300);
+  --lw-color-border-default: var(--lw-slate-800);
+  --lw-color-border-subtle: var(--lw-slate-850);
+  --lw-color-border-strong: var(--lw-slate-700);
+  --lw-color-border-focus: var(--lw-violet-400);
+  --lw-color-border-danger: var(--lw-red-300);
+  --lw-color-border-brand: var(--lw-violet-400);
+  --lw-color-effect-shadow-soft: var(--lw-alpha-black-40);
+  --lw-color-effect-shadow-strong: var(--lw-alpha-black-56);
+  --lw-color-effect-focus-ring: var(--lw-alpha-violet-32);
+  --lw-color-border-hover: var(--lw-slate-600);
+}
+
+/* 3. Shadows (Figma effect styles). On both selectors so .dark recomputes them. */
+:root,
+.dark {
+  --lw-shadow-xs: 0 1px 2px 0 var(--lw-color-effect-shadow-soft);
+  --lw-shadow-sm: 0 1px 2px 0 var(--lw-color-effect-shadow-soft), 0 2px 6px -1px var(--lw-color-effect-shadow-soft);
+  --lw-shadow-lg: 0 16px 40px -8px var(--lw-color-effect-shadow-strong), 0 4px 12px -4px var(--lw-color-effect-shadow-soft);
+}
+
+/* 4. Motion: new in code. Not in the Figma library yet. */
+:root {
+  --lw-duration-fast: 120ms;
+  --lw-duration-base: 200ms;
+  --lw-duration-slow: 320ms;
+  --lw-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --lw-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Component motion tokens: retime one component without touching the others. */
+  --lw-dialog-enter: var(--lw-duration-base);
+  --lw-dialog-exit: var(--lw-duration-fast);
+  --lw-tabs-slide: var(--lw-duration-base);
+}

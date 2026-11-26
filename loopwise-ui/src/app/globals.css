@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/loopwise.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Bridge: shadcn's names point at Loopwise tokens.
+   Declared on :root and .dark: a var() is resolved where it is declared, so a nested .dark needs its own copy. */
+:root,
+.dark {
+  --background: var(--lw-color-bg-canvas);
+  --foreground: var(--lw-color-text-primary);
+  --card: var(--lw-color-bg-surface);
+  --card-foreground: var(--lw-color-text-primary);
+  --popover: var(--lw-color-bg-surface-raised);
+  --popover-foreground: var(--lw-color-text-primary);
+  --primary: var(--lw-color-bg-brand);
+  --primary-hover: var(--lw-color-bg-brand-hover);
+  --primary-pressed: var(--lw-color-bg-brand-pressed);
+  --primary-foreground: var(--lw-color-text-on-brand);
+  --secondary: var(--lw-color-bg-surface);
+  --secondary-foreground: var(--lw-color-text-primary);
+  --muted: var(--lw-color-bg-muted);
+  --muted-foreground: var(--lw-color-text-secondary);
+  --subtle: var(--lw-color-bg-subtle);
+  --accent: var(--lw-color-bg-hover);
+  --accent-pressed: var(--lw-color-bg-pressed);
+  --accent-foreground: var(--lw-color-text-primary);
+  --destructive: var(--lw-color-bg-danger-solid);
+  --destructive-hover: var(--lw-color-bg-danger-solid-hover);
+  --destructive-pressed: var(--lw-color-bg-danger-solid-pressed);
+  --destructive-subtle: var(--lw-color-bg-danger);
+  --destructive-icon: var(--lw-color-icon-danger);
+  --disabled: var(--lw-color-bg-disabled);
+  --disabled-foreground: var(--lw-color-text-disabled);
+  --brand-foreground: var(--lw-color-text-brand);
+  --brand-border: var(--lw-color-border-brand);
+  --border: var(--lw-color-border-default);
+  --border-strong: var(--lw-color-border-strong);
+  --input: var(--lw-color-border-strong);
+  --ring: var(--lw-color-border-focus);
+  --scrim: var(--lw-color-bg-scrim);
+}
+
+/* Tailwind utilities: --color-primary becomes bg-primary, text-primary, border-primary. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-pressed: var(--primary-pressed);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-pressed: var(--accent-pressed);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-destructive-pressed: var(--destructive-pressed);
+  --color-destructive-subtle: var(--destructive-subtle);
+  --color-destructive-icon: var(--destructive-icon);
+  --color-disabled: var(--disabled);
+  --color-disabled-foreground: var(--disabled-foreground);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-border: var(--brand-border);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-scrim: var(--scrim);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-sm: var(--lw-radius-sm);
+  --radius-md: var(--lw-radius-md);
+  --radius-lg: var(--lw-radius-lg);
+  --radius-xl: var(--lw-radius-xl);
+  --shadow-xs: var(--lw-shadow-xs);
+  --shadow-sm: var(--lw-shadow-sm);
+  --shadow-lg: var(--lw-shadow-lg);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+}
