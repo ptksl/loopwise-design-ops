@@ -1,8 +1,16 @@
 # loopwise-design-ops
 
 Rules, registry, checks and the design-system spec that make Claude build Loopwise screens only from the Loopwise
-Design System in Figma, instead of drawing its own components, and that let the designers grow that design system
-themselves.
+Design System in Figma, instead of drawing its own components, and that let designers grow that design system
+themselves. Loopwise is a self-initiated design system by Prateek Singhal; the process below is written so a team could
+run it.
+
+## In code: loopwise-ui
+
+[`loopwise-ui/`](loopwise-ui/) puts the Loopwise tokens on shadcn (the Radix version) in a Next.js and Tailwind app:
+Button, Tabs and Dialog in Light and Dark, with hover, focus, disabled and loading states, a sliding tab indicator and
+dialog motion. Its [README](loopwise-ui/README.md) says how to run it, and [DECISIONS.md](loopwise-ui/DECISIONS.md)
+explains what was changed from shadcn and why.
 
 **Designers: start with [figma-with-claude/designer-guide.md](figma-with-claude/designer-guide.md).** You clone this
 repository and open it in the **Code** tab of the Claude desktop app; `CLAUDE.md` loads the rules, so there is nothing
@@ -31,13 +39,11 @@ Screen session                         Library session
 
 ## Who does what
 
-- **Prateek S, lead designer**, drives the whole process: the screens, what goes into the design system, adding it with
-  Claude, publishing the library, keeping this repository current. He nominates the designers who may add to the
-  library.
-- **Designers** build screens in screen sessions, and add to the library in library sessions when nominated.
-- **A design engineer** is needed only for exceptions: reproducing something that already exists in the product from
-  its code, and bringing the library back in step when the code changed. Everything new in design is made in the
-  library first, and developers build it afterwards.
+Loopwise is a self-initiated system: Prateek Singhal designed it and runs it with Claude. He designs the screens, decides
+what goes into the design system, adds it with Claude in Figma and in `loopwise-ui/`, publishes the library and keeps
+this repository current. No other designers or engineers work on it.
+
+The roles in `CLAUDE.md` and the guides (designers, a design engineer) describe how the process would work for a team.
 
 ## Contents
 
@@ -60,6 +66,9 @@ Root
   without a style, contrast, default names, descriptions, variant names, scopes and code syntax.
 - `list-library-keys.js`: run it on the library file after each publish and paste its output over the generated key
   tables inside `check.js` (Claude does this at the end of a library session).
+
+`loopwise-ui/`
+- The Next.js app with the Loopwise tokens on shadcn: Button, Tabs and Dialog. See its own README.
 
 `design-system/`
 - `spec.md`: the architecture, tokens, components, principles and governance of the system.
